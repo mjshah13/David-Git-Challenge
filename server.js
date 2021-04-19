@@ -9,11 +9,11 @@ const server = http.createServer((req, res) => {
   res.end()
 })
 
-function respondHello (req, res) {
+function respondHello(req, res) {
   res.end(JSON.stringify({ msg: 'hello' }))
 }
 
-function respondBase64 (req, res) {
+function respondBase64(req, res) {
   const phrase = req.url.replace(/^\/b64\//, '')
   res.end(JSON.stringify({ b64: Buffer.from(phrase).toString('base64') }))
 }
